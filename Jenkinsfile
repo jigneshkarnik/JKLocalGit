@@ -4,7 +4,7 @@ node {
             echo 'Dev Good'
         }
        stage('Test') {
-            sh 'echo "good!"; exit 1'
+            echo 'good test!'
         }
         echo 'This will run only if successful'
     } catch (e) {
