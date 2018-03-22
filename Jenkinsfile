@@ -1,7 +1,7 @@
 node {
     try {
         stage('Dev') {
-            sh 'echo "good!"; 
+            sh 'Dev Good'
         }
        stage('Test') {
             sh 'echo "good!"; exit 1'
