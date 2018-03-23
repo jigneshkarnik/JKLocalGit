@@ -7,7 +7,7 @@ node {
             echo 'good test!'
         }
         stage('Deploy'){
-            sh "sshpass -p mininet ssh -o 'StrictHostKeyChecking=no' mininet@192.168.242.131 \"sudo ./testfromjenkins.sh\""
+            sh "sshpass -p mininet ssh -o 'StrictHostKeyChecking=no' mininet@192.168.242.131 \"sudo ./mininet/examples/test/JKMiniTopo.py\""
             echo 'good deploy!'
         }
         echo 'This will run only if successful'
