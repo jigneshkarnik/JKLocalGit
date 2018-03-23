@@ -1,8 +1,6 @@
 node {
     try {
-        stage('Dev') {
-            cd /tmp/jenkins/workspace
-            git clone 'JKMiniWrap.py'            
+        stage('Dev') {        
             echo 'Dev Good'
         }
        stage('Test') {
