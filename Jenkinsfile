@@ -7,7 +7,7 @@ node {
             echo 'good test!'
         }
         stage('Deploy'){
-            sh "sshpass -p mininet ssh mininet@192.168.242.131 "sudo ./testfromjenkins.sh""
+            sh "sshpass -p mininet ssh mininet@192.168.242.131 \"sudo ./testfromjenkins.sh\""
             echo 'good deploy!'
         }
         echo 'This will run only if successful'
