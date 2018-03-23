@@ -1,6 +1,7 @@
 node {
     try {
         stage('Dev') {        
+            git diff --name-only $GIT_PREVIOUS_COMMIT $GIT_COMMIT
             echo 'Dev Good'
         }
        stage('Test') {
