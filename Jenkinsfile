@@ -2,8 +2,8 @@ node {
     try {
         stage('Dev') {        
             echo pwd
-            sh "git status"
-            sh "git branch"
+            sh "git init"
+            sh "git clone https://github.com/jigneshkarnik/JKLocalGit"
             echo 'Dev Good'
         }
        stage('Test') {
