@@ -2,8 +2,8 @@ node {
     try {
         stage('Build') {        
             echo pwd
-            sh "git init"
-            sh "git clone https://github.com/jigneshkarnik/JKLocalGit"
+            sh "cd JKLocalGit"
+            sh "sudo git pull origin master"
             echo 'Dev Good'
         }
        stage('Deploy To Test') {
