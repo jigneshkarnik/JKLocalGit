@@ -1,17 +1,18 @@
 node {
     try {
-        stage('Dev') {        
+        stage('Build') {        
             echo pwd
             sh "git init"
             sh "git clone https://github.com/jigneshkarnik/JKLocalGit"
             echo 'Dev Good'
         }
-       stage('Test') {
-            echo 'good test!'
+       stage('Deploy To Test') {
+           sh "sshpass -p mininet scp JKMiniTopo.py mininet@192.168.242.131:./mininet/examples/test/"  
+           echo 'Deploy!'
         }
-        stage('Deploy'){
+        stage('Test'){
             sh "sshpass -p mininet ssh -o 'StrictHostKeyChecking=no' mininet@192.168.242.131 \"sudo ./mininet/examples/test/JKMiniWrap.py\""
-            echo 'good deploy!'
+            echo 'good test!'
         }
         echo 'This will run only if successful'
     } catch (e) {
