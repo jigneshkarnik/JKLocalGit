@@ -1,8 +1,9 @@
 node {
     try {
         stage('Dev') {        
-            sh "git checkout master"
-            sh "git pull origin master"
+            echo pwd
+            sh "git status"
+            sh "git branch"
             echo 'Dev Good'
         }
        stage('Test') {
